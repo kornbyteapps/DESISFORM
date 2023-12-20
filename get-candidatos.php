@@ -17,7 +17,7 @@ function getCandidatos()
         http_response_code(500);
         die("Error en la conexión. Por favor, inténtalo de nuevo más tarde.");
     }
-    // Consultar las regiones desde la base de datos utilizando
+    // Consultar los candidatos desde la bd
     $query = "SELECT id_candidato, nombre_candidato FROM candidatos";
     $stmt = $conexion->prepare($query);
     // Verificar errores en la consulta
@@ -38,9 +38,8 @@ function getCandidatos()
     // Cerrar la consulta y la conexión
     $stmt->close();
     $conexion->close();
-    // Devolver el resultado como JSON
     return $candidatos;
 }
-// Llamar a la función y enviar la respuesta JSON
+// Devolver respuesta respuesta JSON
 header('Content-Type: application/json');
 echo json_encode(getCandidatos());
