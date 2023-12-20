@@ -13,6 +13,8 @@ git clone https://github.com/kornbyteapps/DESISFORM.git
 
 _Installar Xampp En su versión mas actual(en este caso 8.2.12)_
 
+_Clonar el repositorio a  C:\xampp\htdocs_
+
 Modificar el puerto por defecto de mysql a 4306 accediendo al archivo my.ini(en xampp click en config de mysql y abrir el archivo  y editar el port en el apartado # Here follows entries for some specific programs
 
 
