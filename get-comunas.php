@@ -1,5 +1,4 @@
 <?php
-// Aquí deberías incluir la conexión a tu base de datos
 $databaseConfig = array(
     'host' => 'localhost:4306',
     'usuario' => 'root',
@@ -11,7 +10,7 @@ $conexion = new mysqli($GLOBALS['databaseConfig']['host'], $GLOBALS['databaseCon
 if (isset($_GET['region'])) {
     $regionSeleccionada = $_GET['region'];
 
-    // Consultar las comunas de la región seleccionada desde la base de datos
+    // Consultar las comunas de la región seleccionada
     $query = "SELECT id_comuna, nombre_comuna FROM comunas WHERE id_provincia IN 
               (SELECT id_provincia FROM provincias WHERE id_region = $regionSeleccionada)";
     $result = mysqli_query($conexion, $query);
