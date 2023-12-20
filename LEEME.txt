@@ -1,0 +1,26 @@
+# Formulario votación Desis
+
+Formulario de contacto elaborado para prueba técnica Desis.cl
+
+## Clonar proyecto 🚀
+Para clonar el proyecto:
+git clone https://github.com/kornbyteapps/DESISFORM.git
+
+### Pre-requisitos 📋
+
+Instalar Xampp en su versión más actual (en este caso, 8.2.12)
+
+Clonar el repositorio en C:\xampp\htdocs
+
+Modificar el puerto por defecto de MySQL a 4306 accediendo al archivo my.ini (en Xampp, hacer clic en Config de MySQL, abrir el archivo y editar el puerto en el apartado # Here follows entries for some specific programs_
+
+Modificar el puerto por defecto del documento encontrado en "C:\xampp\phpMyAdmin\config.inc.php" y agregar esta línea $cfg['Servers'][$i]['port'] = 4306; en la sección "/* Authentication type and info */"
+
+*Los archivos mencionados anteriormente se encuentran en este mismo repositorio en la carpeta "adicional"
+
+### Herramientas 🛠️
+
+* PHP 8.2.12 (https://www.php.net) 
+* XAMPP 8.2.12 (https://www.apachefriends.org/es/index.html)
+* MySQL 8.0 (https://www.mysql.com)
+* Apache 2.4.5 (https://httpd.apache.org)
