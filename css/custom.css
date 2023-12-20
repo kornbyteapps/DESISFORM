@@ -2,7 +2,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  min-height: 100vh; /* Cambiando a min-height */
+  min-height: 100vh; 
   margin: 0;
   background-image: url("../img/bg.jpg");
   background-size: cover;
