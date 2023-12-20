@@ -14,16 +14,13 @@ git clone https://github.com/kornbyteapps/DESISFORM.git
 _Installar Xampp En su versión mas actual(en este caso 8.2.12)_
 
 _Modificar el puerto por defecto de mysql a 4306 accediendo al archivo my.ini(en xampp click en config de mysql y abrir el archivo  y editar el port en el apartado # Here follows entries for some specific programs_
-_# Here follows entries for some specific programs 
+_Modificar el puerto por defecto del documento hayado en "C:\xampp\phpMyAdmin\config.inc.php" y agregar esta la linea $cfg['Servers'][$i]['port'] = 4306; en la seccion "/* Authentication type and info */"_
+### Versiones🔧
 
-# The MySQL server
-default-character-set=utf8mb4
-[mysqld]
-port=4306_
+_Para este proyecto se utilizó:
+PHP en su versión 8.2.12, 
+Server version: 10.4.32-MariaDB_
 
-### Puesta a punto 🔧
-
-_Una vez instalado lo anterior debemos proceder a configurar dentro del proyecto la base de datos que tengamos destinada para este fin_
 
 -DEVELOP: Para iniciar el proyecto en develop debemos modificar el archivo LOCAL dentro de la carpeta Settings y añadir
 los datos propios de nuestra base de datos_
