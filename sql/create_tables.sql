@@ -1,8 +1,10 @@
 -- Crear tabla de regiones
 CREATE TABLE Regiones (
     id_region INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_region VARCHAR(255) NOT NULL
-);
+    nombre_region VARCHAR(255) NOT NULL,
+    abreviatura VARCHAR(4) NOT NULL,
+    capital VARCHAR(64) NOT NULL
+); 
 
 -- Crear tabla de provincias
 CREATE TABLE Provincias (
@@ -21,23 +23,26 @@ CREATE TABLE Comunas (
 );
 
 -- Crear tabla de candidatos
-CREATE TABLE Candidatos (
-    id_candidato INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_candidato VARCHAR(255) NOT NULL
+CREATE TABLE `candidatos` (
+  `id_candidato` int(11) NOT NULL,
+  `nombre_candidato` varchar(255) NOT NULL
 );
 
 -- Crear tabla de votos
-CREATE TABLE Votos (
-    id_voto INT AUTO_INCREMENT PRIMARY KEY,
-    nombre_apellido VARCHAR(255) NOT NULL,
-    alias VARCHAR(20) NOT NULL,
-    rut VARCHAR(12) NOT NULL,
-    email VARCHAR(255) NOT NULL,
-    id_candidato INT NOT NULL,
-    id_region INT NOT NULL,
-    id_comuna INT NOT NULL,
-    UNIQUE KEY (rut),
-    FOREIGN KEY (id_candidato) REFERENCES Candidatos(id_candidato),
-    FOREIGN KEY (id_region) REFERENCES Regiones(id_region),
-    FOREIGN KEY (id_comuna) REFERENCES Comunas(id_comuna)
-);
+CREATE TABLE `votos` (
+  `id_voto` int(11) NOT NULL,
+  `nombre_apellido` varchar(255) NOT NULL,
+  `alias` varchar(20) NOT NULL,
+  `rut` varchar(12) NOT NULL,
+  `email` varchar(255) NOT NULL,
+  `id_candidato` int(11) NOT NULL,
+  `id_region` int(11) NOT NULL,
+  `id_comuna` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+ALTER TABLE `votos`
+  ADD PRIMARY KEY (`id_voto`),
+  ADD UNIQUE KEY `rut` (`rut`),
+  ADD KEY `id_candidato` (`id_candidato`),
+  ADD KEY `id_region` (`id_region`),
+  ADD KEY `id_comuna` (`id_comuna`);
