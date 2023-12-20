@@ -1,0 +1,89 @@
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-image: url("../img/bg.jpg");
+  background-size: cover;
+  background-position: center;
+  font-family: "Arial", sans-serif;
+}
+
+.container-box {
+  background: rgba(255, 255, 255, 0.93);
+  padding: 55px;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.7);
+}
+
+form {
+  max-width: 400px;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 0.5rem;
+}
+
+input,
+select {
+  margin-bottom: 0.5rem;
+}
+
+.mensaje-error {
+  color: red;
+  margin-top: -0.05rem;
+  margin-bottom: 0.15rem;
+  font-size: 15px;
+}
+
+input::placeholder {
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.mb-3 {
+  margin-top: -9px;
+}
+
+/*a pantallas muy pequeñas (hasta 320px) */
+@media only screen and (max-width: 320px) {
+
+}
+
+/* Media query para pantallas pequeñas (entre 321px y 576px) */
+@media only screen and (min-width: 321px) and (max-width: 576px) {
+  /* Ajustes específicos para pantallas pequeñas */
+  .form-group {
+    margin-bottom: 10px;
+  }
+
+  .form-check {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  #enviar {
+    width: 100%;
+  }
+}
+
+/* pantallas medianas (entre 577px y 768px) */
+@media only screen and (min-width: 577px) and (max-width: 768px) {
+
+}
+
+/* pantallas grandes (entre 769px y 992px) */
+@media only screen and (min-width: 769px) and (max-width: 992px) {
+
+}
+
+/* pantallas extra grandes (entre 993px y 1200px) */
+@media only screen and (min-width: 993px) and (max-width: 1200px) {
+
+}
+
+/* pantallas extra extra grandes (más de 1200px) */
+@media only screen and (min-width: 1201px) {
+ 
+}

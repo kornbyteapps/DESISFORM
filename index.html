@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ComboBox Regiones y Comunas</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="css/custom.css" />
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+  </head>
+
+  <body>
+    <!-- Inicio formulario de contacto con Bootstrap -->
+    <div class="container-box">
+      <center>
+        <h2 class="mb-4">Votaciones 2023</h2>
+      </center>
+
+      <!-- Contenedor principal del formulario -->
+      <form id="votos">
+        <!-- INICIO: Campos del formulario -->
+        <label for="nombre-apellido">Nombre y Apellido:</label>
+        <div class="mb-3">
+          <input
+            type="text"
+            id="nombre-apellido"
+            name="nombre-apellido"
+            class="form-control"
+            pattern="^[^\d]+$"
+            required
+            onfocus="validarCampo('nombre-apellido', 'err-nombre-apellido')"
+            oninput="validarCampo('nombre-apellido', 'err-nombre-apellido')"
+          />
+          <p id="err-nombre-apellido" class="mensaje-error"></p>
+          <!--espacio para mostrar errores-->
+        </div>
+        <!-- INICIO: o -->
+        <label for="alias">Alias:</label>
+        <div class="mb-3">
+          <input
+            type="text"
+            id="alias"
+            name="alias"
+            class="form-control"
+            onfocus="validarCampo('alias', 'err-alias')"
+            required
+            oninput="validarCampo('alias', 'err-alias')"
+          />
+          <p id="err-alias" class="mensaje-error"></p>
+        </div>
+
+        <label for="rut">RUT:</label>
+        <div class="mb-3">
+          <input
+            type="text"
+            id="rut"
+            name="rut"
+            class="form-control"
+            placeholder="Ej: 11111111-1"
+            required
+            onfocus="validarCampo('rut', 'err-rut')"
+            oninput="validarCampo('rut', 'err-rut')"
+          />
+          <p id="err-rut" class="mensaje-error"></p>
+        </div>
+
+        <label for="email">Email:</label>
+        <div class="mb-3">
+          <input
+            type="text"
+            id="email"
+            name="email"
+            class="form-control"
+            placeholder="Ej: usuario@dominio.com"
+            required
+            onfocus="validarCampo('email', 'err-email')"
+            oninput="validarCampo('email', 'err-email')"
+          />
+          <p id="err-email" class="mensaje-error"></p>
+        </div>
+
+        <label for="region">Región:</label>
+        <div class="mb-3">
+          <select
+            id="region"
+            name="region"
+            class="form-select"
+            onchange="cargarComunas()"
+            onfocus="validarCampo('region','err-region')"
+            oninput="validarCampo('region','err-region')"
+            required
+          >
+            <option value="" selected>Seleccione región</option>
+          </select>
+          <p id="err-region" class="mensaje-error"></p>
+        </div>
+
+        <label for="comuna">Comuna:</label>
+        <div class="mb-3">
+          <select
+            id="comuna"
+            name="comuna"
+            class="form-select"
+            onfocus="validarCampo('comuna','err-comuna')"
+            required
+            oninput="validarCampo('comuna','err-comuna')"
+          >
+            <option value="" selected>Seleccione comuna</option>
+            <!-- Opciones de comunas se cargarán dinámicamente desde JavaScript -->
+          </select>
+          <p id="err-comuna" class="mensaje-error"></p>
+        </div>
+        <label for="candidato">Candidato:</label>
+        <div class="mb-3">
+          <select
+            id="candidato"
+            name="candidato"
+            class="form-select"
+            onfocus="validarCampo('candidato','err-candidato')"
+            required
+            oninput="validarCampo('candidato','err-candidato')"
+          >
+            <option value="" selected>Elegir candidato</option>
+          </select>
+          <p id="err-candidato" class="mensaje-error"></p>
+        </div>
+
+        <label>¿Cómo se enteró de nosotros?</label>
+        <div class="mb-3">
+          <div class="form-check form-check-inline">
+            <input
+              type="checkbox"
+              id="web"
+              name="como-se-entero[]"
+              value="Web"
+              onclick="validarCheck('como-se-entero', 'err-como-se-entero')"
+              class="form-check-input"
+            />
+            <label class="form-check-label" for="web">Web</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              type="checkbox"
+              id="tv"
+              name="como-se-entero[]"
+              value="TV"
+              onclick="validarCheck('como-se-entero', 'err-como-se-entero')"
+              class="form-check-input"
+            />
+            <label class="form-check-label" for="tv">TV</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              type="checkbox"
+              id="redesSociales"
+              name="como-se-entero[]"
+              value="Redes Sociales"
+              onclick="validarCheck('como-se-entero', 'err-como-se-entero')"
+              class="form-check-input"
+            />
+            <label class="form-check-label" for="redesSociales"
+              >Redes Sociales</label
+            >
+          </div>
+          <div class="form-check form-check-inline">
+            <input
+              type="checkbox"
+              id="amigos"
+              name="como-se-entero[]"
+              value="Amigos"
+              onclick="validarCheck('como-se-entero', 'err-como-se-entero')"
+              class="form-check-input"
+            />
+            <label class="form-check-label" for="amigos">Amigos</label>
+          </div>
+          <p id="err-como-se-entero" class="mensaje-error"></p>
+        </div>
+        <!-- FIN: Campos del formulario -->
+
+        <!-- Botón de envío -->
+        <button
+          type="submit"
+          id="enviar"
+          class="btn btn-primary"
+          style="width: 100%"
+          name="enviar"
+        >
+          Votar
+        </button>
+      </form>
+    </div>
+    <!-- Alerta Modal para Succes o Rut ya registrado -->
+    <div
+      class="modal fade"
+      id="alert-modal"
+      tabindex="-1"
+      role="dialog"
+      aria-labelledby="titulo"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="titulo"></h5>
+            <button
+              type="button"
+              class="close"
+              data-dismiss="modal"
+              aria-label="Close"
+            >
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="body"></div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-dismiss="modal"
+            >
+              Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- SCRIPTS: o -->
+    <script src="js/bootstrap.min.js"></script>
+    <script src="scripts.js"></script>
+    <script src="response.js"></script>
+  </body>
+</html>
