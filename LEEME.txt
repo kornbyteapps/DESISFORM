@@ -12,6 +12,7 @@ Instalar Xampp en su versión más actual (en este caso, 8.2.12)
 Clonar el repositorio en C:\xampp\htdocs
 
 Correr el código sql en phpmyadmin para crear la base de datos
+*Importante correr primero create_table,sql y luego los inserts para poblar la DB
 
 Modificar el puerto por defecto de MySQL a 4306 accediendo al archivo my.ini (en Xampp, hacer clic en Config de MySQL, abrir el archivo y editar el puerto en el apartado # Here follows entries for some specific programs_
 
