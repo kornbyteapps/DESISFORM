@@ -5,7 +5,7 @@ Formulario de contacto elaborado para prueba técnica Desis.cl
 ## Clonar proyecto 🚀
 Para clonar el proyecto:
 git clone https://github.com/kornbyteapps/DESISFORM.git
-
+Correr el código sql en phpmyadmin para crear la base de datos
 ### Pre-requisitos 📋
 
 Instalar Xampp en su versión más actual (en este caso, 8.2.12)
