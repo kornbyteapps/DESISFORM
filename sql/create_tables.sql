@@ -37,7 +37,8 @@ CREATE TABLE `votos` (
   `email` varchar(255) NOT NULL,
   `id_candidato` int(11) NOT NULL,
   `id_region` int(11) NOT NULL,
-  `id_comuna` int(11) NOT NULL
+  `id_comuna` int(11) NOT NULL,
+  `referencia` varchar(25) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 ALTER TABLE `votos`
