@@ -1,5 +1,4 @@
 <?php
-// Configuración de la base de datos
 $databaseConfig = array(
     'host' => 'localhost:4306',
     'usuario' => 'root',
@@ -17,7 +16,7 @@ function getRegiones()
         http_response_code(500);
         die("Error en la conexión. Por favor, inténtalo de nuevo más tarde.");
     }
-    // Consultar las regiones desde la base de datos utilizando
+    // Consultar las regiones
     $query = "SELECT id_region, nombre_region FROM regiones";
     $stmt = $conexion->prepare($query);
     // Verificar errores en la consulta
@@ -38,10 +37,10 @@ function getRegiones()
     // Cerrar la consulta y la conexión
     $stmt->close();
     $conexion->close();
-    // Devolver el resultado como JSON
+    // Devolver los valores
     return $regiones;
 }
-// Llamar a la función y enviar la respuesta JSON
+// devolver respuesta JSON
 header('Content-Type: application/json');
 echo json_encode(getRegiones());
 ?>
