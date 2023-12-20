@@ -25,7 +25,7 @@ _*Los archivos mencionados anteriormente se encuentran en este mismo repositorio
 * [PHP 8.2.12](https://www.php.net) 
 * [XAMPP 8.2.12](https://www.apachefriends.org/es/index.html)
 * [MySQL 8.0](https://www.mysql.com)
-* [Apache 2.4.5]([https://django-rest-framework-simplejwt.readthedocs.io/en/latest/](https://httpd.apache.org)) -
+* [Apache 2.4.5](https://httpd.apache.org)
 
 
 
