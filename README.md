@@ -18,7 +18,7 @@ Modificar el puerto por defecto de mysql a 4306 accediendo al archivo my.ini(en 
 
 Modificar el puerto por defecto del documento hayado en "C:\xampp\phpMyAdmin\config.inc.php" y agregar esta la linea $cfg['Servers'][$i]['port'] = 4306; en la seccion "/* Authentication type and info */"
 
-_Los archivos mencionados anteriormente se encuentran en este mismo repositorio en la carpeta adicional"
+_*Los archivos mencionados anteriormente se encuentran en este mismo repositorio en la carpeta "adicional"_
 
 ### Herramientas 🛠️
 
