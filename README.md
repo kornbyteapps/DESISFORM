@@ -20,9 +20,13 @@ _Modificar el puerto por defecto del documento hayado en "C:\xampp\phpMyAdmin\co
 ### Versiones🔧
 
 _Para este proyecto se utilizó:_
+
 _PHP en su versión 8.2.12_ 
+
 _Server version: 10.4.32-MariaDB_
+
 _Apache/2.4.58_
+
 _mysqlnd 8.2.12_
 
 
